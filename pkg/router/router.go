@@ -2,7 +2,6 @@ package router
 
 import (
 	"net/http"
-	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -10,8 +9,8 @@ import (
 func SetupRoutes(router *gin.Engine) {
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
-			"mode": os.Getenv("ENV"),
-			"msg":  http.StatusText(http.StatusOK),
+			"status": http.StatusText(http.StatusOK),
+			"data":   nil,
 		})
 	})
 
@@ -19,7 +18,7 @@ func SetupRoutes(router *gin.Engine) {
 	{
 		omise.GET("/", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{
-				"msg": "OMISE",
+				"data": "Hello Omise",
 			})
 		})
 	}
