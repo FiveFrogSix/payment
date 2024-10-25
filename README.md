@@ -7,3 +7,5 @@ gin -p 6112
 # Prod
 export GO_ENV="prod" 
 gin -p 6112
+
+# MOVE PROJECT TO GITLAB
